@@ -1,0 +1,61 @@
+{
+  "$id": "https://github.com/getdock/schemas/connections.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "User social connections",
+  "title": "User network connections",
+  "definitions": {
+    "connection": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "company": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "uniqueItems": true
+          }
+        },
+        "connectedOn": {
+          "type": "number",
+          "format": "timestamp"
+        },
+        "source": {
+          "type": "string",
+          "description": "Optional field that denotes where this connection is coming from"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "connections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/connection"
+      }
+    }
+  },
+  "required": [
+    "connections"
+  ]
+}
