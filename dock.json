@@ -1,0 +1,43 @@
+{
+  "$id": "https://github.com/getdock/schemas/dock.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "Base schema required for every package that is participating in Dock protocol",
+  "type": "object",
+  "properties": {
+    "$originAddress": {
+      "type": "string",
+      "format": "ethAddress",
+      "example": "0x1234567890AbCdEf000000000000000000000000",
+      "$comment": "Ethereum address of the data creator. This should always remain the same for every package repackaging"
+    },
+    "$recipientAddress": {
+      "type": "string",
+      "format": "ethAddress",
+      "example": "0x1234567890AbCdEf000000000000000000000000",
+      "$comment": "Designated recipient address. This should always be changed on every package resending to match the recipient"
+    },
+    "$createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2010-10-10T12:20:12.999Z",
+      "$comment": "Date when original package was created. This should remain unchanged during repackage."
+    },
+    "$data": {
+      "$comment": "This is where package payload goes.",
+      "anyOf": [
+        {
+          "type": "array"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "required": [
+    "$originAddress",
+    "$recipientAddress",
+    "$createdAt",
+    "$data"
+  ]
+}
