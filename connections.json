@@ -3,6 +3,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "User social connections",
   "title": "User network connections",
+  "allOf": [
+    {
+      "$ref": "https://github.com/getdock/schemas/dock.json"
+    }
+  ],
   "definitions": {
     "connection": {
       "type": "object",
@@ -48,14 +53,11 @@
   },
   "type": "object",
   "properties": {
-    "connections": {
+    "$data": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/connection"
       }
     }
-  },
-  "required": [
-    "connections"
-  ]
+  }
 }
