@@ -4,6 +4,11 @@
   "$comment": "Base schema required for every package that is participating in Dock protocol",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "$comment": "Key to identify dock-compatible schema that was used to build given data package"
+      "example": "https://github.com/getdock/schemas/dock.json"
+    },
     "$originAddress": {
       "type": "string",
       "format": "ethAddress",
@@ -35,6 +40,7 @@
     }
   },
   "required": [
+    "$schema",
     "$originAddress",
     "$recipientAddress",
     "$createdAt",

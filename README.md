@@ -25,14 +25,15 @@ your root schema using `allOf` keyword:
 
 This will include all fields from Dock schema:
 
+- `$schema`: denotes what schema was used to build this particular
+  package. It is required to let recipient know what's inside the package.
 - `$originAddress`: original address of the participant that created
   the data within this data package. This should remain unchanged during
   the repackaging process so that the final recipient would know who
   originally created this data (rather than the address of the user who
   repackaged the data)
-- `$recipientAddress`: address of the designated recipient. This is the
-  only field that is changed on every repackage. It is needed to ensure
-  the recipient that the data was indeed designated for him.
+- `$recipientAddress`: address of the designated recipient. It is needed
+  to ensure the recipient that the data was indeed designated for him.
 - `$createdAt`: time value that denotes when original data was created.
   This should remain unchanged during the repackaging process to let the
   recipient see when original data was packaged.
