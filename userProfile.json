@@ -3,6 +3,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Basic user profile that includes name, email, location and reviews",
   "title": "Dock user profile",
+  "allOf": [
+    {
+      "$ref": "https://github.com/getdock/schemas/dock.json"
+    }
+  ],
   "definitions": {
     "review": {
       "type": "string"
@@ -100,78 +105,83 @@
   },
   "type": "object",
   "properties": {
-    "title": "user",
-    "type": "object",
-    "description": "Properties related to the user object",
-    "properties": {
-      "first_name": {
-        "description": "User's first name",
-        "type": "string"
-      },
-      "last_name": {
-        "description": "User's last name",
-        "type": "string"
-      },
-      "email": {
-        "description": "User's primary email address",
-        "type": "string"
-      },
-      "headline": {
-        "type": "string"
-      },
-      "avatar": {
-        "description": "URL pointing to user's avatar",
-        "type": "string"
-      },
-      "location": {
-        "$ref": "#/definitions/location",
-        "description": "User's address as returned by Google address api"
-      },
-      "city": {
-        "type": "string"
-      },
-      "country": {
-        "type": "string"
-      },
-      "required": [
-        "first_name",
-        "last_name",
-        "email"
-      ]
-    },
-    "profile": {
-      "background": {
-        "type": "string"
-      },
-      "bio": {
-        "type": "string"
-      },
-      "languages": {
-        "type": "array",
-        "items": {
-          "type": "string"
+    "$data": {
+      "type": "object",
+      "properties": {
+        "title": "user",
+        "type": "object",
+        "description": "Properties related to the user object",
+        "properties": {
+          "first_name": {
+            "description": "User's first name",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "User's last name",
+            "type": "string"
+          },
+          "email": {
+            "description": "User's primary email address",
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "avatar": {
+            "description": "URL pointing to user's avatar",
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/definitions/location",
+            "description": "User's address as returned by Google address api"
+          },
+          "city": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "required": [
+            "first_name",
+            "last_name",
+            "email"
+          ]
         },
-        "uniqueItems": true
-      },
-      "phone": {
-        "type": "string"
-      },
-      "phone_country_code": {
-        "type": "string"
-      },
-      "reviews": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/review"
-        }
-      },
-      "status": {
-        "type": "string"
+        "profile": {
+          "background": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "phone": {
+            "type": "string"
+          },
+          "phone_country_code": {
+            "type": "string"
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/review"
+            }
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user",
+          "profile"
+        ]
       }
-    },
-    "required": [
-      "user",
-      "profile"
-    ]
+    }
   }
 }
