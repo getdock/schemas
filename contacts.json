@@ -1,15 +1,15 @@
 {
-  "$id": "https://github.com/getdock/schemas/connections.json",
+  "$id": "https://github.com/getdock/schemas/contacts.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "User social connections",
-  "title": "User network connections",
+  "description": "User contacts",
+  "title": "User contacts",
   "allOf": [
     {
       "$ref": "https://github.com/getdock/schemas/dock.json"
     }
   ],
   "definitions": {
-    "connection": {
+    "contact": {
       "type": "object",
       "properties": {
         "firstName": {
@@ -41,7 +41,11 @@
         },
         "source": {
           "type": "string",
-          "description": "Optional field that denotes where this connection is coming from"
+          "description": "Optional field that denotes which platform this contact is coming from."
+        },
+        "subSource": {
+          "type": "string",
+          "description": "Optional field that denotes the kind of relationship this contact has with the User."
         }
       },
       "required": [
@@ -56,7 +60,7 @@
     "$data": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/connection"
+        "$ref": "#/definitions/contact"
       }
     }
   }
