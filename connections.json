@@ -31,13 +31,13 @@
         "tags": {
           "type": "array",
           "items": {
-            "type": "string",
-            "uniqueItems": true
-          }
+            "type": "string"
+          },
+          "uniqueItems": true
         },
         "connectedOn": {
-          "type": "number",
-          "format": "timestamp"
+          "type": "string",
+          "format": "date-time"
         },
         "source": {
           "type": "string",
@@ -45,8 +45,8 @@
         }
       },
       "required": [
-        "first_name",
-        "last_name",
+        "firstName",
+        "lastName",
         "email"
       ]
     }
