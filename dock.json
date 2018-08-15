@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/getdock/schemas/dock.json",
+  "$id": "https://getdock.github.io/schemas/dock.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$comment": "Base schema required for every package that is participating in Dock protocol",
   "type": "object",

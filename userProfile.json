@@ -5,7 +5,7 @@
   "title": "Dock user profile",
   "allOf": [
     {
-      "$ref": "https://github.com/getdock/schemas/dock.json"
+      "$ref": "https://getdock.github.io/schemas/dock.json"
     }
   ],
   "definitions": {
