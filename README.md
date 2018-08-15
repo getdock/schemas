@@ -8,7 +8,7 @@ In order to provide unified and verifiable protocol operations it is
 important to have few "metadata fields" included in each package.
 
 This is achieved by adding
-[dock base](https://github.com/getdock/schemas/base.json) schema into
+[dock base](https://getdock.github.io/schemas) schema into
 your root schema using `allOf` keyword:
 
 ```json
@@ -16,7 +16,7 @@ your root schema using `allOf` keyword:
   "$schema": "http://json-schema.org/draft-07/schema#",
   "allOf": [
     {
-      "$ref": "https://github.com/getdock/schemas/dock.json"
+      "$ref": "https://getdock.github.io/schemas/dock.json"
     }
   ],
   "$data": ["..."]
