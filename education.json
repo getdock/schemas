@@ -1,0 +1,73 @@
+{
+  "$id": "https://getdock.github.io/schemas/education.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "User education information.",
+  "title": "User Education",
+  "allOf": [
+    {
+      "$ref": "https://getdock.github.io/schemas/dock.json"
+    }
+  ],
+  "definitions": {
+    "education": {
+      "type": "object",
+      "properties": {
+        "school": {
+          "type": "object",
+          "properties": {
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "logo": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            }
+          }
+        },
+        "fieldOfStudy": {
+          "type": "string"
+        },
+        "degree": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "startMonth": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "startYear": {
+          "type": "integer"
+        },
+        "endMonth": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "endYear": {
+          "type": "integer"
+        },
+        "isCurrent": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/education"
+      }
+    }
+  }
+}

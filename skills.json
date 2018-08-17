@@ -1,0 +1,38 @@
+{
+  "$id": "https://getdock.github.io/schemas/skills.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "User skills.",
+  "title": "User Skills",
+  "allOf": [
+    {
+      "$ref": "https://getdock.github.io/schemas/dock.json"
+    }
+  ],
+  "definitions": {
+    "skill": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "years": {
+          "type": "number"
+        },
+        "level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/skill"
+      }
+    }
+  }
+}

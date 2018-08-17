@@ -1,0 +1,70 @@
+{
+  "$id": "https://getdock.github.io/schemas/jobExperience.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "User job experience.",
+  "title": "User Job Experience",
+  "allOf": [
+    {
+      "$ref": "https://getdock.github.io/schemas/dock.json"
+    }
+  ],
+  "definitions": {
+    "job": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "object",
+          "properties": {
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "logo": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            }
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "occupation": {
+          "type": "string"
+        },
+        "startMonth": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "startYear": {
+          "type": "integer"
+        },
+        "endMonth": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "endYear": {
+          "type": "integer"
+        },
+        "isCurrent": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/job"
+      }
+    }
+  }
+}

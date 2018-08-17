@@ -1,0 +1,35 @@
+{
+  "$id": "https://getdock.github.io/schemas/userContactInfo.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Contact information for the user.",
+  "title": "User Contact Information",
+  "allOf": [
+    {
+      "$ref": "https://getdock.github.io/schemas/dock.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "$data": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "description": "User's country",
+          "type": "string"
+        },
+        "city": {
+          "description": "User's city",
+          "type": "string"
+        },
+        "phone": {
+          "description": "User's phone number",
+          "type": "string"
+        },
+        "phoneCountryCode": {
+          "description": "User's phone number country code",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

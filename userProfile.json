@@ -1,21 +1,27 @@
 {
-  "$id": "https://github.com/getdock/schemas/userProfile.json",
+  "$id": "https://getdock.github.io/schemas/userProfile.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "User profile that includes headline and bio.",
   "title": "Dock user profile",
   "allOf": [
     {
       "$ref": "https://getdock.github.io/schemas/dock.json"
-    },
+    }
+  ],
   "type": "object",
   "properties": {
-    "headline": {
-      "description": "User's headline",
-      "type": "string"
-    },
-    "bio": {
-      "description": "User's bio",
-      "type": "string"
+    "$data": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "description": "User's headline",
+          "type": "string"
+        },
+        "bio": {
+          "description": "User's bio",
+          "type": "string"
+        }
+      }
     }
   }
 }
