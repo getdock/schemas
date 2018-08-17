@@ -1,12 +1,12 @@
 {
-  "$id": "https://github.com/getdock/schemas/dock.json",
+  "$id": "https://getdock.github.io/schemas/dock.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$comment": "Base schema required for every package that is participating in Dock protocol",
   "type": "object",
   "properties": {
     "$schema": {
       "type": "string",
-      "$comment": "Key to identify dock-compatible schema that was used to build given data package"
+      "$comment": "Key to identify dock-compatible schema that was used to build given data package",
       "example": "https://github.com/getdock/schemas/dock.json"
     },
     "$originAddress": {
