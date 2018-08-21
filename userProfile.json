@@ -1,186 +1,26 @@
 {
-  "$id": "https://github.com/getdock/schemas/userProfile.json",
+  "$id": "https://getdock.github.io/schemas/userProfile.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Basic user profile that includes name, email, location and reviews",
+  "description": "User profile that includes headline and bio.",
   "title": "Dock user profile",
   "allOf": [
     {
       "$ref": "https://getdock.github.io/schemas/dock.json"
     }
   ],
-  "definitions": {
-    "review": {
-      "type": "string"
-    },
-    "types": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "uniqueItems": true,
-        "enum": [
-          "locality",
-          "political",
-          "administrative_area_level_2",
-          "administrative_area_level_1",
-          "country",
-          "postal_code"
-        ]
-      }
-    },
-    "address_component": {
-      "type": "object",
-      "properties": {
-        "long_name": {
-          "type": "string"
-        },
-        "short_name": {
-          "type": "string"
-        },
-        "types": {
-          "$ref": "#/definitions/types"
-        }
-      }
-    },
-    "location": {
-      "type": "object",
-      "properties": {
-        "country_code": {
-          "type": "string"
-        },
-        "country_id": {
-          "type": "string"
-        },
-        "country_name": {
-          "type": "string"
-        },
-        "latitude": {
-          "type": "number"
-        },
-        "longitude": {
-          "type": "number"
-        },
-        "user_input": {
-          "type": "object",
-          "properties": {
-            "address_components": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/address_component"
-              }
-            },
-            "description": {
-              "type": "string"
-            },
-            "formatted_address": {
-              "type": "string"
-            },
-            "latitude": {
-              "type": "number"
-            },
-            "longitude": {
-              "type": "number"
-            },
-            "name": {
-              "type": "string"
-            },
-            "place_id": {
-              "type": "string"
-            },
-            "scope": {
-              "type": "string",
-              "enum": [
-                "GOOGLE"
-              ]
-            },
-            "types": {
-              "$ref": "#/definitions/types"
-            },
-            "utc_offset": {
-              "type": "number"
-            }
-          }
-        }
-      }
-    }
-  },
   "type": "object",
   "properties": {
     "$data": {
       "type": "object",
       "properties": {
-        "title": "user",
-        "type": "object",
-        "description": "Properties related to the user object",
-        "properties": {
-          "first_name": {
-            "description": "User's first name",
-            "type": "string"
-          },
-          "last_name": {
-            "description": "User's last name",
-            "type": "string"
-          },
-          "email": {
-            "description": "User's primary email address",
-            "type": "string"
-          },
-          "headline": {
-            "type": "string"
-          },
-          "avatar": {
-            "description": "URL pointing to user's avatar",
-            "type": "string"
-          },
-          "location": {
-            "$ref": "#/definitions/location",
-            "description": "User's address as returned by Google address api"
-          },
-          "city": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "required": [
-            "first_name",
-            "last_name",
-            "email"
-          ]
+        "headline": {
+          "description": "User's headline",
+          "type": "string"
         },
-        "profile": {
-          "background": {
-            "type": "string"
-          },
-          "bio": {
-            "type": "string"
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "uniqueItems": true
-          },
-          "phone": {
-            "type": "string"
-          },
-          "phone_country_code": {
-            "type": "string"
-          },
-          "reviews": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/review"
-            }
-          },
-          "status": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "user",
-          "profile"
-        ]
+        "bio": {
+          "description": "User's bio",
+          "type": "string"
+        }
       }
     }
   }

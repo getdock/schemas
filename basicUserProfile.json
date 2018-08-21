@@ -1,0 +1,35 @@
+{
+  "$id": "https://getdock.github.io/schemas/basicUserProfile.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Basic user profile.",
+  "title": "Basic User Profile",
+  "allOf": [
+    {
+      "$ref": "https://getdock.github.io/schemas/dock.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "$data": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "description": "User's first name",
+            "type": "string"
+          },
+          "lastName": {
+            "description": "User's last name",
+            "type": "string"
+          },
+          "avatar": {
+            "description": "URL pointing to user's avatar",
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName"
+        ]
+    }
+  }
+}

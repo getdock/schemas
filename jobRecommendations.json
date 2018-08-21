@@ -1,0 +1,47 @@
+{
+  "$id": "https://getdock.github.io/schemas/jobRecommendations.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "User job recommendations.",
+  "title": "User Job Recommendations",
+  "allOf": [
+    {
+      "$ref": "https://getdock.github.io/schemas/dock.json"
+    }
+  ],
+  "definitions": {
+    "jobRecommendation": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "authorHeadline": {
+          "type": "string"
+        },
+        "authorAvatar": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "description": "Platform on which this recommendation was created on."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/jobRecommendation"
+      }
+    }
+  }
+}

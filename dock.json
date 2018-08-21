@@ -7,7 +7,7 @@
     "$schema": {
       "type": "string",
       "$comment": "Key to identify dock-compatible schema that was used to build given data package",
-      "example": "https://github.com/getdock/schemas/dock.json"
+      "example": "https://getdock.github.io/schemas/dock.json"
     },
     "$originAddress": {
       "type": "string",
